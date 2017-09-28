@@ -11,7 +11,7 @@ int main() {
 
     float oj_price_per_oz = (float) oj_price / oj_weight;
 
-    printf("%.2f", oj_price_per_oz);
+    printf("%.2f\n", oj_price_per_oz);
 
     printf("How many times did your roommate take your juice?");
     scanf("%d", &num_times_oj_taken);
@@ -20,10 +20,11 @@ int main() {
         int oz_drank;
         printf("How much juice did your roommate take this time (in oz.)?");
         scanf("%d", &oz_drank);
-        owes_me += oz_drank * oj_price_per_oz;
+        owes_me += (float) oz_drank * oj_price_per_oz;
+        printf("owes_me: %.2f", owes_me);
 
         if (owes_me >= 10.00) {
-            printf("My roommate owes me $10");
+            printf("My roommate owes me $10\n");
             owes_me = 0;
         }
     }
